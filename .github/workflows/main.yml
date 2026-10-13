@@ -31,6 +31,11 @@ jobs:
           python -m pip install --upgrade pip
           pip install buildozer cython setuptools
 
+      - name: Fix SDCard Path for Linux Runner
+        run: |
+          sudo mkdir -p /sdcard
+          sudo chmod -R 777 /sdcard
+
       - name: Execute T-Max Autonomous Builder Engine
         run: |
           python auto_fix_all.py || true
