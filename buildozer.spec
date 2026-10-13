@@ -21,9 +21,10 @@ source.include_dirs = assets,res,shaders,modules,modi,locales,presets,build
 version = 1.0.0
 
 # (list) Application requirements
+# comma separated e.g. requirements = sqlite3,kivy
 requirements = python3,kivy,pillow,pyjnius,android
 
-# (str) Supported orientation
+# (str) Supported orientation (one of landscape, sensorLandscape, portrait or all)
 orientation = portrait
 
 # (bool) Indicate if the application should be fullscreen or not
@@ -32,24 +33,24 @@ fullscreen = 1
 # (list) Permissions
 android.permissions = INTERNET,WRITE_EXTERNAL_STORAGE,READ_EXTERNAL_STORAGE
 
-# (int) Target Android API
+# (int) Target Android API, should be as high as possible.
 android.api = 33
 
 # (int) Minimum API required
 android.minapi = 21
 
-# (str) Android NDK version
+# (str) Android NDK version to use
 android.ndk = 25b
 
-# (str) Android Build-Tools version
+# (str) Android Build-Tools version to use
 android.build_tools_version = 31.0.0
 
 # (bool) Accept Android SDK licenses automatically
 android.accept_sdk_license = True
 
 [buildozer]
-# (int) Log level (0 = error only, 1 = info, 2 = debug)
+# (int) Log level (0 = error only, 1 = info, 2 = debug (with command output))
 log_level = 2
 
-# (int) Display warning if buildozer is run as root
+# (int) Display warning if buildozer is run as root (0 = false, 1 = true)
 warn_on_root = 1
