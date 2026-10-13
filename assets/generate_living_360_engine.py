@@ -1,20 +1,3 @@
-import json
-import os
-
-# ============================================================
-DIRECTORY SETUP & CONFIGURATION
-# ============================================================
-base_dir = "assets"
-dirs = [
-    os.path.join(base_dir, "worlds"),
-    os.path.join(base_dir, "shaders"),
-    os.path.join(base_dir, "locales"),
-    os.path.join(base_dir, "config"),
-    os.path.join(base_dir, "presets"),
-    "docs"
-]
-
-for d in dirs:
-    os.makedirs(d, exist_ok=True)
-
-print("Folders initialized successfully.")
+version https://git-lfs.github.com/spec/v1
+oid sha256:5553e4aedb5ba70ea2a575f605646fc9ef74b670a6ab95a1a1bdebcfde9812e9
+size 510
