@@ -36,16 +36,21 @@ jobs:
           sudo mkdir -p /sdcard
           sudo chmod -R 777 /sdcard
 
-      - name: Execute T-Max Autonomous Builder Engine
+      - name: Execute T-Max Pre-Build Engine
         run: |
-          python auto_fix_all.py || true
-          python autonomous_builder.py || true
+          python auto_fix_all.py
+          python autonomous_builder.py
+
+      - name: Build Android APK with Buildozer
+        run: |
+          buildozer android debug
 
       - name: Find and Upload Generated APK Artifact
         uses: actions/upload-artifact@v4
         with:
           name: AKILAMU-Android-App
           path: |
+            bin/*.apk
             **/*.apk
             *.apk
           if-no-files-found: warn
